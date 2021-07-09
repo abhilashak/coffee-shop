@@ -1,6 +1,6 @@
 # README
 
-A day at a coffee shop! 
+A day at a coffee shop!
 
 This software descibes how you can spend a day at a coffee shop by shopping
 whatever you want.
