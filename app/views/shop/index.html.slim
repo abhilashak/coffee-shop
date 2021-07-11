@@ -29,4 +29,4 @@
                     = "Free with #{item.free_with_item&.name}"
                   - if item.discount_with_item
                     = fa_icon "bullhorn", class: 'me-1'
-                    = "Discount of #{item.discount_percentage}% with #{item.discount_with_item&.name}"
+                    = "GET #{item.discount_percentage}% discount with #{item.discount_with_item&.name}"
