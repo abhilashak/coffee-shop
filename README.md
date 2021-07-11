@@ -2,8 +2,24 @@
 
 A day at a coffee shop!
 
-This software descibes how you can spend a day at a coffee shop by shopping
+This software describes how you can spend a day at a coffee shop by shopping
 whatever you want.
+
+* How to up and running this software
+
+    1. Install Ruby 2.7.2
+    2. Install Rails 5.2.6
+    3. Install Git, Mysql
+    4. Open your terminal and do 
+       $ git clone git@github.com:abhilashak/coffee-shop.git
+    5. Execute the following commands in your terminal
+       Edit creadentials and add mysql username, password etc.
+         $ EDITOR="code --wait" bin/rails credentials:edit
+       $ bundle install
+       $ rake db:reseed -t
+       $ rails s
+       Goto http://localhost:3000
+       and spend your day at a coffee shop!
 
 * Ruby version used
 
@@ -26,6 +42,13 @@ whatever you want.
        2. RVM
           Install rvm, ruby via rvm, rails 5.2.6
 
+* Poulate data
+How to use the module `PopulateData` for an Item model population
+Goto the rails console and do the command
+
+     $ rails c
+     > PopulateData::ItemModel.new('sandwich', 1).fill
+
 * Configuration
 
 * Secret keys
@@ -46,9 +69,7 @@ Access by:
 
 * Database initialization
 
-      $ rake db:create -t    # create 
-      $ rake db:migrate -t   # migrate
-      $ rake db:seed -t      # seed data
+      $ rake db:reseed -t      # drop, create db and seed data
 
 * How to run the test suite
 
