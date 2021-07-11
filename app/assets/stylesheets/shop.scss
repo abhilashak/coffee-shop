@@ -4,8 +4,49 @@
 
 footer {
   background-color: #45526e;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.shop-index {
+  max-height: 600px;
+  overflow: scroll;
+}
+
+.card {
+  width: 15rem;
+  height: 80%;
+  .card-body {
+    .card-text{
+      font-size: 15px;
+    }
+    .price {
+      float: left;
+      width: 60%;
+      background-color: #e2e2e2;
+    }
+    .add {
+      float: right;
+      width: 35%;
+      padding: 3px;
+      margin-left: 5px;
+      font-size: 13px;
+    }
+    .free_with {
+      width: 100%;
+    }
+  }
+
+  .card-img-top {
+    background-image: url('/assets/food.jpeg');
+    background-repeat: repeat-y;
+    height: 140px;
+    width: 238px;
+  }
 }

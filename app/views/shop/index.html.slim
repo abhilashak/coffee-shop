@@ -1,0 +1,32 @@
+.container
+  .row.my-2
+    .alert.alert-primary role="alert" 
+      = fa_icon "info-circle", class: 'me-1'
+      | Select the items by clicking on the add button and pay for the items to purchase
+
+  .shop-index
+    .row.row-cols-1.row-cols-md-4
+      - @items_enum.each do |items|
+        - items.each do |item|
+          .col
+            .card.my-3
+              .card-img-top
+              .card-body
+                h5.card-title
+                  = item.name
+                .price-add
+                  p.card-text.ps-2.price
+                    = fa_icon "dollar", class: 'me-1'
+                    = "#{item.price} ($#{item.tax} tax)"
+                
+                  a.btn.btn-success.add href="#"
+                    = fa_icon "plus", class: 'me-1'
+                    | Add
+                .clearfix
+                .free_with
+                  - if item.free_with_item
+                    = fa_icon "bullhorn", class: 'me-1'
+                    = "Free with #{item.free_with_item&.name}"
+                  - if item.discount_with_item
+                    = fa_icon "bullhorn", class: 'me-1'
+                    = "GET #{item.discount_percentage}% discount with #{item.discount_with_item&.name}"

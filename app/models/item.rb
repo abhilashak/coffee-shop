@@ -10,10 +10,10 @@ class Item < ApplicationRecord
   scope :random, -> { order(Arel.sql('RAND()')).limit(1) }
 
   # Associations
+  belongs_to  :free_with_item, class_name: 'Item', foreign_key: 'free_with_item_id'
+  belongs_to  :discount_with_item, class_name: 'Item', foreign_key: 'discount_with_item_id'
   has_many :order_items
   has_many :orders, through: :order_items
-  has_one  :free_with_item, class_name: 'Item', foreign_key: 'free_with_item_id'
-  has_one  :discount_with_item, class_name: 'Item', foreign_key: 'discount_with_item_id'
 
   # Validations
   validates :name, :price, :tax, presence: true
