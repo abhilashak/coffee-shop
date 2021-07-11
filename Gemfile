@@ -11,11 +11,13 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# bootstrap-sass is a Sass-powered version of Bootstrap 3
-# bootstrap-sass is easy to drop into Rails with the asset pipeline
-gem 'bootstrap-sass', '~> 3.4.1'
+
+# Bootstrap
+gem 'bootstrap', '~> 5.0.1'
 # Bootstrap JavaScript depends on jQuery
 gem 'jquery-rails', '4.4.0'
+# font awesome
+gem 'font-awesome-rails', '4.7.0.7'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

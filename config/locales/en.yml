@@ -1,33 +1,18 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  header:
+    welcome: 'Welcome to Coffee Shop!'
+    description: 'Spend a day at the coffee shop by shopping what you like. There is lots of free and discounted items waiting for you! Hurry!'
+  footer:
+    company: 'Coffee Shop'
+    product:
+      heading: 'Products'
+      link: 'Sample product 1'
+    useful:
+      heading: 'Useful links'
+      link: 'Useful link 1'
+    contact:
+      heading: 'Contact'
+      address: 'New York, NY 10012, US'
+      email: 'info@gmail.com'
+      phone_1: '+ 01 234 567 88'
+      phone_2: '+ 01 234 567 89'
