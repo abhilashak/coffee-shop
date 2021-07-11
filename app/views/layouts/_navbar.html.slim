@@ -1,0 +1,12 @@
+#navbarToggleExternalContent.collapse
+  .bg-dark.p-4
+    h5.text-white.h4
+      = I18n.t('header.welcome')
+    span.text-muted
+      = I18n.t('header.description')
+nav.navbar.navbar-dark.bg-dark
+  .container-fluid
+    button.navbar-toggler aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label=("Toggle navigation") data-bs-target="#navbarToggleExternalContent" data-bs-toggle="collapse" type="button" 
+      span.navbar-toggler-icon
+      a.navbar-brand.ms-2.mt-1 href="#"
+        = I18n.t('footer.company')
