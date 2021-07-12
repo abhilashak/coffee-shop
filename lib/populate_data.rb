@@ -14,6 +14,12 @@ module PopulateData
     # expensive items price, tax in $
     EXPS_MAX_PRICE = 20.0
     EXPS_MAX_TAX   = 5.0
+    # user can get 1 to 70 % of discount on an item
+    MIN_DIS_PERCENT = 1
+    MAX_DIS_PERCENT = 70
+    FREE_OR_DIS_CHANCE = 0.35
+    HIGH_PRICE_CHANCE = 0.2
+    HALF_CHANCE = 0.5
 
     def initialize(category, index)
       # `category` of the item and an unique value `index` to initialize the object
@@ -88,23 +94,23 @@ module PopulateData
     # the item has a high price
     # 20% chance of the item has high price
     def high_priced?
-      rand < 0.2
+      rand < HIGH_PRICE_CHANCE
     end
 
     # the item has a discount or it will get free with other item
     # 35% chance of getting free or discount
     def can_give_as_disc_or_free?
-      rand < 0.35
+      rand < FREE_OR_DIS_CHANCE
     end
 
     # 50% chance to get as free versus discounted
     def can_give_free?
-      rand < 0.5
+      rand < HALF_CHANCE
     end
 
     # 1 - 70 percentage discount
     def discount_percent
-      rand(1..70)
+      rand(MIN_DIS_PERCENT..MAX_DIS_PERCENT)
     end
   end
 end
