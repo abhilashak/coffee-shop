@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     total = Orders::Total.new(item_params).calculate
     respond_to do |format|
       format.json do
-        render json: { success: true, total: total }
+        render json: { total: total }
       end
     end
   end
