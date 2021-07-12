@@ -4,6 +4,7 @@ en:
     description: 'Spend a day at the coffee shop by shopping what you like. There is lots of free and discounted items waiting for you! Hurry!'
   footer:
     company: 'Coffee Shop'
+    copyright: 'Copyright ©'
     product:
       heading: 'Products'
       link: 'Sample product 1'
@@ -19,3 +20,8 @@ en:
   shopping:
     info: 'Add and pay for the items to purchase'
     total_value: 'Your order total: $'
+    btn:
+      buy: 'Buy items'
+      pay: 'Pay'
+      select: 'Select again'
+      add: 'Add'
