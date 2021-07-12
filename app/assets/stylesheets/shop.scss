@@ -14,9 +14,15 @@ footer {
   clear: both;
 }
 
-.shop-index {
-  max-height: 600px;
-  overflow: scroll;
+.container {
+  .shop-index {
+    max-height: 600px;
+    overflow: scroll;
+  }
+
+  #buy-btn {
+    float: right;
+  }
 }
 
 .card {
@@ -31,7 +37,7 @@ footer {
       width: 60%;
       background-color: #e2e2e2;
     }
-    .add {
+    .add-item-btn {
       float: right;
       width: 35%;
       padding: 3px;

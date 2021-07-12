@@ -12,17 +12,17 @@ whatever you want.
     3. Install Git, Mysql
     4. Open your terminal and do 
 
-       $ git clone git@github.com:abhilashak/coffee-shop.git
+            $ git clone git@github.com:abhilashak/coffee-shop.git
 
     5. Execute the following commands in your terminal
        
        Edit creadentials and add mysql username, password etc.
          
-         $ EDITOR="code --wait" bin/rails credentials:edit
+            $ EDITOR="code --wait" bin/rails credentials:edit
 
-       $ bundle install
-       $ rake db:reseed -t
-       $ rails s
+            $ bundle install
+            $ rake db:reseed -t
+            $ rails s
 
        Goto http://localhost:3000
 

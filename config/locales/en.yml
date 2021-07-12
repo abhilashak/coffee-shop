@@ -16,3 +16,5 @@ en:
       email: 'info@gmail.com'
       phone_1: '+ 01 234 567 88'
       phone_2: '+ 01 234 567 89'
+  shopping:
+    info: 'Add and pay for the items to purchase'
