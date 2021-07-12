@@ -10,8 +10,12 @@ class Item < ApplicationRecord
   scope :random, -> { order(Arel.sql('RAND()')).limit(1) }
 
   # Associations
-  belongs_to  :free_with_item, class_name: 'Item', foreign_key: 'free_with_item_id'
-  belongs_to  :discount_with_item, class_name: 'Item', foreign_key: 'discount_with_item_id'
+  belongs_to  :free_with_item, class_name: 'Item',
+                               foreign_key: 'free_with_item_id',
+                               optional: true
+  belongs_to  :discount_with_item, class_name: 'Item',
+                                   foreign_key: 'discount_with_item_id',
+                                   optional: true
   has_many :order_items
   has_many :orders, through: :order_items
 
@@ -20,11 +24,23 @@ class Item < ApplicationRecord
   validates :name, length: { minimum: 2, maximum: 60 }
   validates :category, length: { maximum: 50 }
   validates :discount_percentage, presence: true,
-                                  if: proc { discount_with_item.present? }
+                                  if: proc { discount_with_item_id.present? }
 
   # Instance Methods
+  def free?
+    free_with_item_id.present?
+  end
+
+  def discounted?
+    discount_with_item_id.present?
+  end
+
   # checks this item is free or discount with any other item
   def free_or_discounted?
-    free_with_item_id.present? || discount_with_item_id.present?
+    free? || discounted?
+  end
+
+  def cost
+    price + tax
   end
 end
