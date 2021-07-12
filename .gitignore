@@ -19,6 +19,8 @@
 
 /public/assets
 .byebug_history
+.rvmrc
+.rvmrc.*
 
 # Since this file is encrypted, it is safe to push this to a remote git
 # repository or a server. Keep master key

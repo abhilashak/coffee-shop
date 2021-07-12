@@ -8,13 +8,12 @@ a bunch of items in which some are free, some get discounted with other items.
 * How to up and run this software
 
     1. Install Ruby 2.7.2
-    2. Install Rails 5.2.6
-    3. Install Mysql, Git
-    4. Open your terminal and do 
+    2. Install Mysql, Git
+    3. Open your terminal and do
 
         $ git clone git@github.com:abhilashak/coffee-shop.git
 
-    5. Execute the following commands in your terminal
+    4. Execute the following commands in your terminal
        
        Edit creadentials and add YOUR mysql username, password etc.
          
