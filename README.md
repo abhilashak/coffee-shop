@@ -59,6 +59,11 @@ a bunch of items in which some are free, some get discounted with other items.
        2. RVM
           Install rvm, ruby via rvm, rails 5.2.6
 
+       3. For `Windows` systems add the following gem at the end of the Gemfile
+
+            # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+            gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby] 
+
 * Poulate data
 
 How to use the module `PopulateData` for an Item model population
