@@ -4,7 +4,13 @@
       .alert.alert-primary role="alert"
         = fa_icon "info-circle", class: 'me-1'
         = I18n.t('shopping.info')
-        a.btn.btn-outline-primary.mx-2#buy-btn type='submit' data-count='0' Buy items
+        a.btn.btn-outline-primary.mx-2#buy-btn type='submit' data-count='0'
+          | Buy items
+        .total-info.d-none
+          .total-text
+            = I18n.t('shopping.total_value')
+          a.btn.btn-outline-success.mx-2#pay-btn
+            | Pay
 
     .shop-index
       .row.row-cols-1.row-cols-md-4
