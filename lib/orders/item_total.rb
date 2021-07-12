@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Module used for calculating the order total
+# Module used for calculating the ordered item total cost
 module Orders
   # class responsible for item total
   class ItemTotal

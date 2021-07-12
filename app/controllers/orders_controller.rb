@@ -6,11 +6,13 @@ require 'orders/total'
 class OrdersController < ApplicationController
   include Orders
 
+  # POST /orders
   def create
     total = Orders::Total.new(item_params).calculate
+    order = Order.create_with_items(item_params, total)
     respond_to do |format|
       format.json do
-        render json: { total: total }
+        render json: { total: total, order_id: order&.id }
       end
     end
   end

@@ -2,7 +2,7 @@
 
 require_relative 'item_total'
 
-# Module used for calculating the order total
+# Module used for calculating the ordered total cost
 module Orders
   # class responsible for order total
   class Total

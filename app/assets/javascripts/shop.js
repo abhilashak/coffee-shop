@@ -18,6 +18,8 @@ $(document).ready(function() {
     return true
   });
   
+  // when user clicks on the buy btn send the order info, calculate the total
+  // and show the information to the user to pay
   $("body").on( "click","#buy-btn", function() {
     var form = $('form#order_form')
     $.ajax({
@@ -31,12 +33,22 @@ $(document).ready(function() {
     });
   });
 
+  // Reload the page to select the items again
+  $("body").on( "click","#select-again-btn", function() {
+    location.reload();
+  });
+
   // hide buy btn and show the confim btn and info
   function showConfirm(total) {
     $( '#buy-btn' ).hide()
     $( '.total-info' ).removeClass('d-none')
     var total_txt = $( '.total-text' ).text()
     $( '.total-text' ).text( total_txt + total)
+
+    // if the total is $0 disable pay btn
+    if (total == 0) {
+      $( '#pay-btn' ).addClass('disabled')
+    }
   }
 
   // modify selected item count and btn text
