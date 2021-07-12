@@ -27,9 +27,18 @@ $(document).ready(function() {
       data: form.serialize(),
       success: function(data) {
         // console.log('response data ---', data)
+        showConfirm(data['total'])
       }
     });
   });
+
+  // hide buy btn and show the confim btn and info
+  function showConfirm(total) {
+    $( '#buy-btn' ).hide()
+    $( '.total-info' ).removeClass('d-none')
+    var total_txt = $( '.total-text' ).text()
+    $( '.total-text' ).text( total_txt + total)
+  }
 
   // modify selected item count and btn text
   function modifyBuyBtn() {
