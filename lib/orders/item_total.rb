@@ -37,9 +37,10 @@ module Orders
       @item.cost
     end
 
+    # discount gets on price not on tax. Tax will be same
     def cost_after_discount
-      discount = (@item.price * @item.discount_percentage / 100)
-      @item.price - discount
+      discount = @item.price * @item.discount_percentage / 100
+      @item.price - discount + @item.tax
     end
   end
 end

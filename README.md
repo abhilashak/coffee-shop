@@ -92,12 +92,9 @@ Access by:
 
       $ rake db:reseed -t      # drop, create db and seed data
 
-* Configuration
+* Optimizations needed
 
-* How to run the test suite
+    1. Remove unwanted bootstrap js files from the system.
+       Right now bootstrap gem loads default js files into the software
+ 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
