@@ -2,31 +2,39 @@
 
 A day at a coffee shop!
 
-This software describes how you can spend a day at a coffee shop by shopping
-whatever you want.
+This software describes how you can spend a day at the coffee shop by shopping
+a bunch of items in which some are free, some get discounted with other items.
 
 * How to up and run this software
 
     1. Install Ruby 2.7.2
     2. Install Rails 5.2.6
-    3. Install Git, Mysql
+    3. Install Mysql, Git
     4. Open your terminal and do 
 
-            $ git clone git@github.com:abhilashak/coffee-shop.git
+        $ git clone git@github.com:abhilashak/coffee-shop.git
 
     5. Execute the following commands in your terminal
        
-       Edit creadentials and add mysql username, password etc.
+       Edit creadentials and add YOUR mysql username, password etc.
          
-            $ EDITOR="code --wait" bin/rails credentials:edit
+           $ EDITOR="code --wait" bin/rails credentials:edit
 
-            $ bundle install
-            $ rake db:reseed -t
-            $ rails s
+       Install the gems used in the software by doing bundle install
+
+           $ bundle install
+
+       Now create the database and populate the shop items to it
+
+           $ rake db:reseed -t
+
+       Last you start the puma app server by
+
+           $ rails s
 
        Goto http://localhost:3000
 
-       and spend your day at a coffee shop!
+       and spend your time and the day at the coffee shop!!
 
 * Ruby version used
 
