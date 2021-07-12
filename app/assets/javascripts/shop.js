@@ -26,7 +26,6 @@ $(document).ready(function() {
       dataType: 'json',
       data: form.serialize(),
       success: function(data) {
-        // console.log('response data ---', data)
         showConfirm(data['total'])
       }
     });
