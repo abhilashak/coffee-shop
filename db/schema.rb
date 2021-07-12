@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_175848) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.decimal "total", precision: 9, scale: 2, null: false
+    t.string "status", limit: 20, default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

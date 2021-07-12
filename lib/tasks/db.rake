@@ -13,7 +13,7 @@ namespace :db do
   desc 'Populates the database with sample data'
   task populate_sample_data: :environment do
     Item::CATEGORIES.each do |c|
-      10.times do |i|
+      20.times do |i|
         PopulateData::ItemModel.new(c, i + 1).fill
       end
     end

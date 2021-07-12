@@ -29,6 +29,7 @@ $(document).ready(function() {
       data: form.serialize(),
       success: function(data) {
         showConfirm(data['total'])
+        setupPayLink(data)
       }
     });
   });
@@ -46,9 +47,40 @@ $(document).ready(function() {
     $( '.total-text' ).text( total_txt + total)
 
     // if the total is $0 disable pay btn
-    if (total == 0) {
-      $( '#pay-btn' ).addClass('disabled')
-    }
+    if (total == 0) { disablePayBtn() }
+  }
+
+  // make the pay btn clickable to do the payment 
+  function setupPayLink(response) {
+    $("body").on( "click","#pay-btn", function() {
+      $.ajax({
+        url: response['complete_link'],
+        type: 'put',
+        dataType: 'json',
+        data: {
+          order_id: response['order_id'],
+          authenticity_token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(data) {
+          paymentCompleted()
+        },
+        error: function() {
+          showError()
+        }
+      });
+    });
+  }
+
+  // hide pay related btns and show the message payment made
+  function paymentCompleted() {
+    $( '#pay-btn' ).hide()
+    $( '.total-text' ).text( 'Payment successful!' )
+    $( '#select-again-btn' ).text( 'Shop again' )
+  }
+
+  function showError() {
+    $( '.total-text' ).text( 'Oops...Something went wrong!' )
+    disablePayBtn()
   }
 
   // modify selected item count and btn text
@@ -56,6 +88,8 @@ $(document).ready(function() {
     $( '#buy-btn' ).data('count', selCount() + 1)
     $( '#buy-btn' ).text('Buy ' + selCount() + ' items')
   }
+
+  function disablePayBtn() { $( '#pay-btn' ).addClass('disabled') }
 
   // get selected item count
   function selCount() {
