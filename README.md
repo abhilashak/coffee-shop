@@ -15,19 +15,19 @@ a bunch of items in which some are free, some get discounted with other items.
 
     4. Execute the following commands in your terminal
        
-       Edit creadentials and add YOUR mysql username, password etc.
-         
-           $ EDITOR="code --wait" bin/rails credentials:edit
-
        Install the gems used in the software by doing bundle install
 
            $ bundle install
+
+       Edit creadentials and add YOUR mysql username, password etc.
+         
+           $ EDITOR="code --wait" bin/rails credentials:edit
 
        Now create the database and populate the shop items to it
 
            $ rake db:reseed -t
 
-       Last you start the puma app server by
+       Start the puma app server by
 
            $ rails s
 
