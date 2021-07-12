@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
+require 'orders/total'
+
 # Handle the orders!
 class OrdersController < ApplicationController
+  include Orders
+
   def create
+    total = Orders::Total.new(item_params).calculate
     respond_to do |format|
       format.json do
-        render json: { success: true }
+        render json: { success: true, total: total }
       end
     end
   end
