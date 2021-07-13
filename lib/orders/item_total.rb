@@ -8,8 +8,8 @@ module Orders
 
     DISC_MODES = %w[free discount].freeze
 
-    def initialize(item_id, selected_item_ids)
-      @item = Item.find(item_id)
+    def initialize(item, selected_item_ids)
+      @item = item
       @selected_item_ids = selected_item_ids
     end
 

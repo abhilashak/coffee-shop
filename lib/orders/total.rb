@@ -13,8 +13,8 @@ module Orders
     end
 
     def calculate
-      @selected_item_ids.inject(0.0) do |sum, id|
-        sum + ItemTotal.new(id, @selected_item_ids).calculate
+      Item.find(@selected_item_ids).inject(0.0) do |sum, item|
+        sum + ItemTotal.new(item, @selected_item_ids).calculate
       end
     end
   end
