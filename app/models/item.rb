@@ -26,6 +26,9 @@ class Item < ApplicationRecord
   validates :discount_percentage, presence: true,
                                   if: proc { discount_with_item_id.present? }
 
+  alias_attribute :free_item_with_id, :free_with_item_id
+  alias_attribute :discount_item_with_id, :discount_with_item_id
+
   # Instance Methods
   def free?
     free_with_item_id.present?
