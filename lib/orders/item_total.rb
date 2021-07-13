@@ -6,7 +6,7 @@ module Orders
   class ItemTotal
     attr_reader :item, :selected_item_ids
 
-    DISC_MODES = %w[free_item discount_item].freeze
+    DISC_MODES = %w[free discount].freeze
 
     def initialize(item_id, selected_item_ids)
       @item = Item.find(item_id)
@@ -23,33 +23,27 @@ module Orders
       @item.free? ? cost_of_free_item : cost_of_discount_item
     end
 
-    # If the user selected the parent item and the free item
-    # then the item is free of cost
-    def cost_of_free_item
-      return 0.0 if free_item_with_selected?
-
-      @item.cost
-    end
-
-    # user selected the parent item and the free item
-    # so the item is free of cost
-    def cost_of_discount_item
-      return cost_after_discount if discount_item_with_selected?
-
-      @item.cost
-    end
-
-    # checks user selected free with or discount with item or not
     DISC_MODES.each do |m|
-      define_method("#{m}_with_selected?") do
-        @selected_item_ids.include?(@item.send("#{m}_with_id").to_s)
-      end
-    end
+      # calculates the cost of free or discount item
+      define_method("cost_of_#{m}_item") do
+        return send("cost_after_#{m}") if send("#{m}_with_item_selected?")
 
-    # discount gets on price not on tax. Tax will be same
-    def cost_after_discount
-      discount = @item.price * @item.discount_percentage / 100
-      @item.price - discount + @item.tax
+        @item.cost
+      end
+
+      # checks user selected free with or discount with item or not
+      define_method("#{m}_with_item_selected?") do
+        @selected_item_ids.include?(@item.send("#{m}_with_item_id").to_s)
+      end
+
+      # discount: discount gets on price not on tax. Tax will be same
+      # free: item is free of cost
+      define_method("cost_after_#{m}") do
+        return 0.0 if m.eql?('free')
+
+        discount = @item.price * @item.discount_percentage / 100
+        @item.price - discount + @item.tax
+      end
     end
   end
 end
