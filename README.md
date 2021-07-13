@@ -5,7 +5,17 @@ A day at a coffee shop!
 This software describes how you can spend a day at the coffee shop by shopping
 a bunch of items in which some are free, some get discounted with other items.
 
-* How to up and run this software
+* Project Description
+
+1. One shop item is FREE with other item
+2. One shop item get at a discount (on price, not on tax) with other item
+3. One shop item is neither free nor discount
+4. The above info has been added upon a probability criteria (in seeding data)
+5. The price is calculated on selected items. Price + tax will be the total cost of each item
+6. Payment successful is shown in the screen
+
+
+# How to up and run this software
 
     1. Install Ruby 2.7.2
     2. Install Mysql, Git
@@ -13,22 +23,33 @@ a bunch of items in which some are free, some get discounted with other items.
 
         $ git clone git@github.com:abhilashak/coffee-shop.git
 
+    3. Create a Gemset called `coffee-shop` to install the gems of the application else you are free to modify the file `.ruby-gemset` or delete as per your convenience.
+    
     4. Execute the following commands in your terminal
        
-       Install the gems used in the software by doing bundle install
+       * Install the gems for this software
 
            $ bundle install
 
-       Edit creadentials and add YOUR mysql username, password etc.
-       Refer the sample file: `credentials.yml.enc.sample`
-         
-           $ EDITOR="code --wait" bin/rails credentials:edit
+       * Generate new `config/credentials.yml.enc` file. Follow the steps.
 
-       Now create the database and populate the shop items to it
+            1. Edit the creadentials and add YOUR mysql username, password
+               Refer the sample file: `credentials.yml.enc.sample`
+         
+               $ EDITOR="code --wait" bin/rails credentials:edit
+
+               this opens the file in VS Code editor. If you want to open in any other editor you can modify the command 'code' (like mate, sublime)
+
+               Now add the contents of the sample file to it: `credentials.yml.enc.sample`. Here you update YOUR mysql username and password
+
+               Close the yml file. Now you have both `config/master.key` & `config/credentials.yml.enc`
+
+
+       * Now create the database and populate the shop items to it
 
            $ rake db:reseed -t
 
-       Start the puma app server by
+       * Start the puma app server by
 
            $ rails s
 
