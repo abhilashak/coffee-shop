@@ -18,8 +18,10 @@ class Order < ApplicationRecord
 
   # Class methods
   def self.create_with_items(item_ids, total)
-    order = create!(total: total) unless total.to_i.eql?(0)
-    item_ids.each { |item_id| order.order_items.create!(item_id: item_id) }
+    return if total.to_i.eql?(0)
+
+    order = create!(total: total)
+    order.item_ids = item_ids
     order
   end
 
