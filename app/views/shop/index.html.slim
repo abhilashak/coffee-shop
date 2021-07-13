@@ -2,7 +2,7 @@
   = form_tag orders_url, method: :post, id: 'order_form' do
     .row.my-2
       .alert.alert-primary role="alert"
-        = fa_icon "info-circle", class: 'me-1'
+        = fa_icon 'info-circle', class: 'me-1'
         = I18n.t('shopping.info')
         a.btn.btn-outline-primary.mx-2#buy-btn type='submit' data-count='0'
           = I18n.t('shopping.btn.buy')
@@ -27,7 +27,7 @@
                   .price-add
                     p.card-text.ps-2.price
                       = fa_icon "dollar", class: 'me-1'
-                      = "#{item.price} ($#{item.tax} tax)"
+                      = price_info(item)
                   
                     a.btn.btn-success.add-item-btn href="#" data-id="#{item.id}"
                       = fa_icon "plus", class: 'me-1'
@@ -36,8 +36,8 @@
                   .clearfix
                   .free_with
                     - if item.free_with_item
-                      = fa_icon "bullhorn", class: 'me-1'
-                      = "Free with #{item.free_with_item&.name}"
+                      = announcement_icon
+                      = free_description(item)
                     - if item.discount_with_item
-                      = fa_icon "bullhorn", class: 'me-1'
-                      = "GET #{item.discount_percentage}% discount with #{item.discount_with_item&.name}"
+                      = announcement_icon
+                      = disc_desciption(item)

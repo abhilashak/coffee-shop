@@ -94,7 +94,8 @@ a bunch of items in which some are free, some get discounted with other items.
 
 * Poulate data
 
-How to use the module `PopulateData` for an Item model population
+How to use the module `PopulateData` for an Item model creation.
+
 Goto the rails console and do the command
 
       $ rails c
@@ -120,11 +121,12 @@ Access by:
 
 * Database initialization
 
-      $ rake db:reseed -t      # drop, create db and seed data
+      $ rake db:reseed -t      # this command does the reinitialization of  database with sample data
 
 * Optimizations needed
 
     1. Remove unwanted bootstrap js files from the system.
-       Right now bootstrap gem loads default js files into the software
+       Right now bootstrap gem loads default js files into the software.
+    2. DB query optimization for has many through association.
  
 
