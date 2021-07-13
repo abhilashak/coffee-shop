@@ -21,10 +21,13 @@
 .byebug_history
 .rvmrc
 .rvmrc.*
+# .rvmrc.07.08.2021-22:41:27
 
 # Since this file is encrypted, it is safe to push this to a remote git
-# repository or a server. Keep master key
-# /config/credentials.yml.enc
+# repository or a server. Keep master key.
+# Fix: but no use for other users who clone this repo. so add it. In readme
+# specified how to generate the credentials again
+/config/credentials.yml.enc
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
