@@ -21,7 +21,6 @@
 .byebug_history
 .rvmrc
 .rvmrc.*
-# .rvmrc.07.08.2021-22:41:27
 
 # Since this file is encrypted, it is safe to push this to a remote git
 # repository or a server. Keep master key.
