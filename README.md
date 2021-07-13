@@ -57,6 +57,13 @@ a bunch of items in which some are free, some get discounted with other items.
 
        and spend your time and the day at the coffee shop!
 
+       Now goto the site
+ 
+        => Click on add btns to add items
+        => After that click on the 'Buy items' btn
+        => It shows the order total. Pay and buy it or click on 'Select again' btn to shop from start
+        => You can see the orders and order items are added in the DB according to your actions
+
 * Ruby version used
 
       2.7.2
