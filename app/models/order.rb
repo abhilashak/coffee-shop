@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'activerecord-import/active_record/adapters/mysql2_adapter'
+
 # Join model for orders and its items
 class Order < ApplicationRecord
   # Enum Store as hash by using rails cool helper methods
@@ -20,8 +22,12 @@ class Order < ApplicationRecord
   def self.create_with_items(item_ids, total)
     return if total.to_i.eql?(0)
 
+    # create order data in db
     order = create!(total: total)
-    order.item_ids = item_ids
+    # create order items data in db
+    ord_itms = item_ids.map { |id| order.order_items.build(item_id: id) }
+    OrderItem.import ord_itms
+
     order
   end
 

@@ -11,6 +11,8 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'puma', '>= 4.3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# for bulk inserting data using ActiveRecord
+gem 'activerecord-import', require: false
 
 # Bootstrap
 gem 'bootstrap', '~> 5.0.1'
