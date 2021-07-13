@@ -20,6 +20,7 @@ a bunch of items in which some are free, some get discounted with other items.
            $ bundle install
 
        Edit creadentials and add YOUR mysql username, password etc.
+       Refer the sample file: `credentials.yml.enc.sample`
          
            $ EDITOR="code --wait" bin/rails credentials:edit
 
@@ -33,7 +34,7 @@ a bunch of items in which some are free, some get discounted with other items.
 
        Goto http://localhost:3000
 
-       and spend your time and the day at the coffee shop!!
+       and spend your time and the day at the coffee shop!
 
 * Ruby version used
 
@@ -73,7 +74,9 @@ Goto the rails console and do the command
 
 * Secret keys
 
-`config/credentials.yml.enc`
+`config/credentials.yml.enc`  # this is now excluded from git
+
+Refer the sample file: `credentials.yml.enc.sample`
 
 Edit by
 
