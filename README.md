@@ -128,5 +128,17 @@ Access by:
     1. Remove unwanted bootstrap js files from the system.
        Right now bootstrap gem loads default js files into the software.
     2. DB query optimization for has many through association.
+
+* Pending modules to implement
+
+    1. Test cases
+        a. Model specs
+        b. Controller specs
+        c. View specs
+        d. Running specs with JavaScript
+
+        NOTE: `Always write test cases first is recommended as it gives a good idea about how the product should be.`
+
+        Tech stack: Rspec, FactoryGirl, Database Cleaner, Use of Test doubles and stubs, Rspec Mocks
  
 
