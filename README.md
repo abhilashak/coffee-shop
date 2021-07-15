@@ -133,10 +133,10 @@ Access by:
 
     1. Test cases
 
-        a. Model specs
-        b. Controller specs
-        c. View specs
-        d. Running specs with JavaScript
+            a. Model specs
+            b. Controller specs
+            c. View specs
+            d. Running specs with JavaScript
 
         NOTE: `Always write test cases first is recommended as it gives a good idea about how the product should be.`
 
