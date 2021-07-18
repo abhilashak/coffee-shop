@@ -22,6 +22,12 @@
 .rvmrc
 .rvmrc.*
 
+# editors
+.vscode
+
+# test
+.rspec
+
 # Since this file is encrypted, it is safe to push this to a remote git
 # repository or a server. Keep master key.
 # Fix: but no use for other users who clone this repo. so add it. In readme

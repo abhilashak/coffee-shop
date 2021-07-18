@@ -129,6 +129,11 @@ Access by:
        Right now bootstrap gem loads default js files into the software.
     2. DB query optimization for has many through association.
 
+* How to run Test cases
+
+    $ rake db:reseed RAILS_ENV=test -t  # seed the sample data into test env db
+
+
 * Pending modules to implement
 
     1. Test cases
